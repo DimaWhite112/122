@@ -1,0 +1,975 @@
+{% extends 'layouts/base_background.html' %}
+{% load static %}
+
+{% block title %} Vintage Sports and Specialty Cars  {% endblock title %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+{% block content %}
+
+</div></div></div>
+ <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 36px;
+        }
+
+        .nav {
+            background-color: black;
+            text-align: center;
+            padding: 10px 0;
+            display: block;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .image-overlay {
+            background: url('https://www.streetmachine.com.au/wp-content/uploads/2023/07/louie-demetriou-charger-front-angle-4-edit-scaled.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            height: 500px;
+            padding-top: 0px;
+        }
+
+        .overlay-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            height: 500px;
+        }
+
+        .overlay-content p {
+            color: #fff;
+        }
+
+        .stats {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .stats h2 {
+            font-size: 24px;
+        }
+
+        .stats p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .image-under-overlay {
+            max-width: 100%;
+            height: auto;
+        }
+.nav ul li a {
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add a smooth transition for the color change */
+    font-size: 25px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-family: 'Century Gothic';
+}
+
+.nav ul li a:hover {
+    color: navajowhite; /* Change to your desired hover color */
+    text-decoration: none;
+}
+/* Add styles for the logo in the header */
+.logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 100px; /* Adjust the width as needed */
+    height: auto;
+}
+
+/* Adjust header styles */
+.header {
+    position: relative; /* To allow absolute positioning of the logo */
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/* Adjust overlay content styles */
+.overlay-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    height: 500px;
+}
+.overlay-content p {
+    color: #fff;
+}
+
+
+    </style>
+</head>
+     <div class="nav">
+        <ul style="padding-top: 15px">
+            <li><a href="#">Homepage</a></li>
+            <li><a href="#inventory1">Inventory</a></li>
+            <li><a href="/home/templates/feedback.html">Feedback</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contactus">Contact Us</a></li>
+            <li class="logo-container"><img src="your-logo-url.png" alt="Your Logo" class="logo"></li>
+        </ul>
+    </div>
+    <header class="header">
+        <div class="image-overlay">
+            <div class="overlay-content">
+                <!-- Your content under the links bar -->
+                <p style="font-family: 'Century Gothic'; font-size: 45px; padding-top: 70px"></p>
+                <p style="font-family: 'Century Gothic'; font-size: 35px">Vintage Sports and Specialty Cars</p>
+            </div>
+        </div>
+    </header>
+
+
+  <style>
+/* Add this CSS to your stylesheet */
+.card1 {
+    width: 300px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-20px); /* Initial position, off-screen to the left */
+    transition: opacity 0.3s, transform 0.3s;
+}
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 768px) {
+    .image-container {
+        width: 100%;
+        height: 100%;
+    }
+    .card1{
+        width: 300px;
+    }
+
+}
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container:hover .hover-overlay {
+    opacity: 1;
+}
+
+.hover-overlay i {
+    color: white;
+    font-size: 40px;
+}
+.text-center1 {
+  color: #fff; /* Make the text white */
+  font-family: Arial, sans-serif; /* Choose a straight font */
+  background-color: #000; /* Black background color */
+  padding: 15px; /* Adjust padding as needed */
+  border-radius: 10px; /* Add rounded corners */
+  display: inline-block; /* Ensure it wraps the text */
+    margin-left: 40%;
+}
+
+
+.filter-container {
+    background: #f0f0f0; /* Light background color */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for the container */
+    border-radius: 5px; /* Slight border radius */
+    display: flex;
+    align-items: center;
+}
+
+.filter-container h4 {
+    margin: 0 10px 0 0; /* Add some spacing */
+    font-weight: bold; /* Make the label bold */
+}
+
+.form-select {
+    background: #fff; /* White background for the select box */
+    border: 1px solid #ccc; /* Border for the select box */
+    padding: 5px 10px; /* Padding for select options */
+    border-radius: 5px; /* Slight border radius */
+}
+
+/* Style select when active or focused */
+.form-select:focus {
+    outline: none;
+    border-color: #007bff; /* Highlight border color */
+}
+
+
+</style>
+
+
+
+
+</head>
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center1 mt-5" style="padding-bottom: 25px">Our Inventory:</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="filter-container">
+    <h4>Sort:</h4>
+    <select id="sorting-options" class="form-select">
+        <option value="price-asc">Price (Low to High)</option>
+        <option value="price-desc">Price (High to Low)</option>
+        <option value="year-asc">Year (Old to New)</option>
+        <option value="year-desc">Year (New to Old)</option>
+    </select>
+</div>
+<section id="inventory" style="display: none"></section>
+
+      </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sortingOptions = document.getElementById("sorting-options");
+        const carList = document.getElementById("car-list");
+
+        sortingOptions.addEventListener("change", function() {
+            const selectedOption = sortingOptions.value;
+            const carContainers = document.querySelectorAll(".car-container");
+            const carArray = Array.from(carContainers);
+
+            if (selectedOption === "price-asc") {
+                carArray.sort((a, b) => {
+                    const priceA = parseInt(a.dataset.price);
+                    const priceB = parseInt(b.dataset.price);
+                    return priceA - priceB;
+                });
+            } else if (selectedOption === "price-desc") {
+                carArray.sort((a, b) => {
+                    const priceA = parseInt(a.dataset.price);
+                    const priceB = parseInt(b.dataset.price);
+                    return priceB - priceA;
+                });
+            } else if (selectedOption === "year-asc") {
+                carArray.sort((a, b) => {
+                    const yearA = parseInt(a.dataset.year);
+                    const yearB = parseInt(b.dataset.year);
+                    return yearA - yearB;
+                });
+            } else if (selectedOption === "year-desc") {
+                carArray.sort((a, b) => {
+                    const yearA = parseInt(a.dataset.year);
+                    const yearB = parseInt(b.dataset.year);
+                    return yearB - yearA;
+                });
+            }
+
+            // Clear the current car list
+            carList.innerHTML = '';
+
+            // Slide in the sorted car containers
+            carArray.forEach((container, index) => {
+                container.style.transform = `translateX(${index * 25}%)`;
+                carList.appendChild(container);
+                // Trigger reflow for the transition to work
+                container.getBoundingClientRect();
+                container.style.transform = 'translateX(0)';
+            });
+        });
+    });
+</script>
+
+
+
+      <div class="col-md-3">
+        <div class="filter-container">
+          <h4>Brand:</h4>
+          <select id="brand-filter" class="form-select" onchange="filterCars()">
+            <option value="all">All Brands</option>
+            {% for brand in brands %}
+    <option value="{{ brand }}">{{ brand }}</option>
+  {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="filter-container" style="width: 200%">
+          <h4>Bodystyles:</h4>
+          <select id="type-filter" class="form-select" onchange="filterCarsByType()">
+            <option value="all">All Bodystyles</option>
+             {% for type in types %}
+    <option value="{{ type }}">{{ type }}</option>
+  {% endfor %}
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container car-list-container">
+    <div class="row" id="car-list">
+  <!-- Car listings will be generated here -->
+  {% for car in car_list %}
+    <div class="col-md-4 col-sm-6 car-container" data-brand="{{ car.brand }}" data-year="{{ car.year }}" data-price="{{ car.price }}" data-type="{{ car.type }}">
+        <div class="car-card">
+    <a href="{% url 'car_details' car.id %}" style="text-decoration: none" class="carr">
+            <div class="car-image">
+            <img src="{{ car.main_photo.url }}" alt="{{ car.brand }} {{ car.model }}" style="width: 100%">
+    </div>
+    <div class="car-details">
+        <h5 class="car-title" style="height: 110px">{{ car.brand }} {{ car.model }}</h5>
+        <div class="car-info" style="border-top: 1px solid black; width: 100%">
+            <div class="year-box" style="margin-right: 120px; font-size: 20px; margin-top: 5px">{{ car.year }}</div>
+            <p class="price" style="font-size: 20px; margin-left: 20%">{{ car.price }} $</p>
+        </div>
+    </div>
+    </a>
+</div>
+
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+  </div>
+  <div class="text-center mt-4" style="display: block; background-color: transparent">
+    <button id="show-more" class="btn btn-custom">Show More</button>
+  </div>
+</section>
+    <style>
+    .car-card:hover {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+}
+    .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-container:hover .hover-overlay {
+    opacity: 1;
+}
+
+.hover-overlay i {
+    color: white;
+    font-size: 40px;
+}
+   .car-card {
+  background-color: white;
+  color: black;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 430px;
+  border: 2px solid transparent; /* Start with a transparent border */
+  border-radius: 10px;
+  transition: border 0.3s ease-in-out, border-radius 0.6s ease-in-out;
+}
+
+.car-card:hover {
+  border: 2px solid black; /* New border color */
+  border-radius: 10px; /* New border-radius value */
+}
+.carr {
+  color: #7b809a;
+  transition: color 0.3s ease-in-out; /* Transition color change */
+  position: relative;
+  overflow: hidden;
+}
+
+.carr img {
+  transition: transform 0.3s ease-in-out; /* Transition zoom effect */
+}
+
+.carr:hover img {
+  transform: scale(1.1); /* Apply a zoom effect on hover */
+}
+
+.carr:hover {
+  color: black; /* Change the text color on hover (you can change this to your preferred color) */
+}
+
+
+.car-image {
+    flex: 1;
+    width: 100%; /* Set a specific width */
+    height: 230px; /* Set a specific height */
+    overflow: hidden; /* Ensure images don't overflow the container */
+}
+
+.car-image img {
+    max-width: 100%;
+    max-height: 100%; /* Make sure images don't exceed the container's height */
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+    display: block;
+}
+
+
+
+.car-details {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.car-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: black
+}
+
+.car-info {
+    display: flex;
+    align-items: center;
+}
+
+.year-box {
+    background-color: red;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+  /* Style for the "Show More" button */
+  #show-more {
+    background-color: Black;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.6s;
+  }
+
+  #show-more:hover {
+    background-color: #7b809a;
+      color: black;
+  }
+</style>
+
+   <script>
+  function filterCars() {
+    // Get selected brand
+    var selectedBrand = document.getElementById("brand-filter").value;
+    var carContainers = document.getElementsByClassName("car-container");
+
+    for (var i = 0; i < carContainers.length; i++) {
+      var carBrand = carContainers[i].getAttribute("data-brand");
+
+      // Initially show all cars
+      carContainers[i].style.display = "block";
+
+      // Hide cars that don't match the selected brand
+      if (selectedBrand !== "all" && carBrand !== selectedBrand) {
+        carContainers[i].style.display = "none";
+      }
+    }
+  }
+
+  function filterCarsByType() {
+    // Get selected bodystyle
+    var selectedType = document.getElementById("type-filter").value;
+    var carContainers = document.getElementsByClassName("car-container");
+
+    for (var i = 0; i < carContainers.length; i++) {
+      var carType = carContainers[i].getAttribute("data-type");
+
+      // Initially show all cars
+      carContainers[i].style.display = "block";
+
+      // Hide cars that don't match the selected bodystyle
+      if (selectedType !== "all" && carType !== selectedType) {
+        carContainers[i].style.display = "none";
+      }
+    }
+  }
+
+  // Add a JavaScript function to show/hide car listings
+ document.addEventListener("DOMContentLoaded", function () {
+  const carList = document.getElementById("car-list");
+  const showMoreButton = document.getElementById("show-more");
+  const cars = carList.querySelectorAll(".car-card");
+  const itemsToShow = 9; // Number of items to show initially
+  let visibleItems = itemsToShow;
+
+  // Function to show or hide car listings with a sliding animation
+  function toggleCarList() {
+    cars.forEach((car, index) => {
+      if (index < visibleItems) {
+        car.style.display = "block";
+        setTimeout(() => {
+          car.style.opacity = 1;
+          car.style.transform = "translateX(0)";
+        }, 100 * index); // Delay the animation for each item
+      } else {
+        car.style.opacity = 0;
+        car.style.transform = "translateX(-100%)"; // Slide to the left
+        car.style.display = "none";
+      }
+    });
+
+    if (visibleItems < cars.length) {
+      showMoreButton.textContent = "Show More"; // Change the button text
+    } else {
+      showMoreButton.textContent = "Show Less"; // Change the button text
+    }
+  }
+
+  // Initial call to apply the animation effect
+  toggleCarList();
+
+  // Add an event listener to the "Show More" button to trigger the animation
+  showMoreButton.addEventListener("click", function () {
+    if (visibleItems < cars.length) {
+      visibleItems += itemsToShow;
+      toggleCarList();
+    } else {
+      visibleItems = itemsToShow;
+      toggleCarList();
+    }
+  });
+});
+
+
+</script>
+
+
+
+
+<style>
+/* Custom button style */
+
+
+/* Custom car listing design */
+.car-container {
+  margin-bottom: 20px;
+}
+
+
+/* Style the "Show More" button */
+#show-more {
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+  /* Add your custom styles here */
+  .filter-container {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #sorting-options,
+  #brand-filter,
+  #type-filter {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .car-list-container {
+    margin-top: 20px;
+  }
+
+  /* Style the "Show More" button */
+  #show-more {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+</style>
+
+
+
+<!-- Add your CSS and JavaScript here -->
+
+
+
+
+
+
+
+
+<div id="overlay5"></div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#openDialogButton5").click(function () { // Use the unique ID for the button
+            $("#dialogBox5").fadeIn(); // Use the unique ID for the dialog box
+            $("#overlay5").fadeIn(); // Use the unique ID for the overlay
+        });
+
+        $("#closeDialogButton5").click(function () { // Use the unique ID for the button
+            $("#dialogBox5").fadeOut(); // Use the unique ID for the dialog box
+            $("#overlay5").fadeOut(); // Use the unique ID for the overlay
+        });
+    });
+</script>
+      <style>
+    #dialogBox5 { /* Unique ID for the first dialog box */
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 2%;
+        border-radius: 15px; /* Smoother edges */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Smoother shadow */
+        z-index: 1000;
+        width: 60%; /* Adjust width as a percentage of the page */
+        max-width: 500px; /* Set a maximum width for very large screens */
+    }
+
+    #overlay5 { /* Unique ID for the first overlay */
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+
+
+    }
+</style>
+
+<style>
+    /* Stylish close button */
+    .close-button5 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        outline: none;
+        color: #333; /* Change the color to your desired color */
+        transition: color 0.3s ease; /* Add a smooth color transition */
+    }
+
+    /* Hover effect for the close button */
+    .close-button5:hover {
+        color: red; /* Change the color on hover to your desired color */
+    }
+</style>
+
+</section>
+<section class="py-5 bg-light">
+ <style>
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the darkness */
+  }
+</style>
+
+<div class="row">
+  <!-- First Section -->
+  <div class="col-md-6">
+    <section class="py-5 position-relative" style="background-image: url('https://i.ytimg.com/vi/JUCx3El6O3M/maxresdefault.jpg'); background-size: cover; background-position: center;">
+      <div class="dark-overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center text-white">
+            <h2 class="display-4" style="position: relative; z-index: 1; color: white">Detailing</h2>
+              <h3 style="color: whitesmoke;position: relative; z-index: 1">At our classic car detailing service, we take your vintage beauty to a level of perfection that you've never seen before. We understand that classic cars deserve special attention, and our experienced detailing experts are here to deliver just that.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Second Section -->
+  <div class="col-md-6">
+    <section class="py-5 position-relative" style="background-image: url('https://pastandpresentmotorcars.com/website/dealer/shipping1/1'); background-size: cover; background-position: center;">
+      <div class="dark-overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center text-white">
+            <h2 class="display-4" style="position: relative; z-index: 1; color: white">Delivery</h2>
+              <h3 style="color: whitesmoke;position: relative; z-index: 1">Welcome to our classic car haven! We understand that getting your dream car to your doorstep is a key part of the classic car experience. Our dedicated delivery service ensures that your prized possession arrives safely and in style.</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section bg-primary text-white py-5" id="contactus">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2 class="display-4">Contact Us</h2>
+        <p class="lead">Your Destination for Classic Cars</p>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="contact-item text-center mb-4">
+          <i class="bi bi-telephone fs-2"></i>
+          <h3 class="mt-3">Phone number:</h3>
+          <p style="color: black">+1 (754) 345-3020</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contact-item text-center mb-4">
+          <i class="bi bi-geo-alt fs-2"></i>
+          <h3 class="mt-3">Address:</h3>
+          <p style="color: black">128 Wilson Ave, Greensburg, PA 15601</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contact-item text-center mb-4">
+          <i class="bi bi-envelope fs-2"></i>
+          <h3 class="mt-3">E-mail:</h3>
+          <p style="color: black">sales@chipsclassicscars.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.hero {
+    background: url('https://dealeraccelerate-all.s3.amazonaws.com/chipwynn/marketing_assets/39/20221104_151453.jpg') center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-title {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.contact-section {
+    background: #f5f5f5;
+    padding: 50px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+.contact-text {
+    font-size: 14px;
+}
+/* Background color for left column */
+.bg-primary {
+    background-color: #7b809a !important;
+}
+
+/* Text color for left column */
+</style>
+
+<!-- -------- END Content Presentation Docs ------- -->
+
+
+
+    </div>
+    <hr class="horizontal dark my-5">
+    <div class="row">
+        <div class="col-lg-2 col-md-4 col-6 ms-lg-0 ms-md-auto">
+        <img class="w-100 opacity-6" src="https://chipsclassiccars.com/wp-content/uploads/2023/09/Chips-Logo-1.png" alt="Logo">
+      </div>
+        <div class="col-lg-2 col-md-4 col-6 ms-auto">
+        <p></p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6 ms-auto">
+        <p>©2023 Chips Classic Llc</p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <p>128 Wilson Ave, Greensburg, PA 15601</p>
+      </div>
+      <div class="col-lg-2 col-md-4 col-6">
+        <p>+1 (754) 345-3020</p>
+      </div>
+
+      <div class="col-lg-2 col-md-4 col-6 me-md-auto mx-md-0 mx-auto">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
+
+</div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+<script src="{% static 'js/plugins/countup.min.js' %}"></script>
+<script src="{% static 'js/plugins/choices.min.js' %}"></script>
+<script src="{% static 'js/plugins/prism.min.js' %}"></script>
+<script src="{% static 'js/plugins/highlight.min.js' %}"></script>
+<!--  Plugin for Parallax, full documentation here: https://github.com/dixonandmoe/rellax -->
+<script src="{% static 'js/plugins/rellax.min.js' %}"></script>
+<!--  Plugin for TiltJS, full documentation here: https://gijsroge.github.io/tilt.js/ -->
+<script src="{% static 'js/plugins/tilt.min.js' %}"></script>
+<!--  Plugin for Selectpicker - ChoicesJS, full documentation here: https://github.com/jshjohnson/Choices -->
+<script src="{% static 'js/plugins/choices.min.js' %}"></script>
+
+
+<script type="text/javascript">
+
+  if (document.getElementById('state1')) {
+    const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+    if (!countUp.error) {
+      countUp.start();
+    } else {
+      console.error(countUp.error);
+    }
+  }
+  if (document.getElementById('state2')) {
+    const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+    if (!countUp1.error) {
+      countUp1.start();
+    } else {
+      console.error(countUp1.error);
+    }
+  }
+  if (document.getElementById('state3')) {
+    const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+    if (!countUp2.error) {
+      countUp2.start();
+    } else {
+      console.error(countUp2.error);
+    };
+  }
+</script>
+
+{% endblock javascripts %}
